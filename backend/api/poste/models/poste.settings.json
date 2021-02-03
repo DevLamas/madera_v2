@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "postes",
+  "info": {
+    "name": "Poste"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "utilisateurs",
+  "info": {
+    "name": "Utilisateur"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Prenom": {
+      "type": "string"
+    },
+    "Mail": {
+      "type": "string"
+    },
+    "Password": {
+      "type": "password"
+    },
+    "Telephone": {
+      "type": "biginteger"
+    },
+    "Adresse": {
+      "type": "string"
+    },
+    "ID_Poste": {
+      "model": "poste"
+    }
+  }
+}

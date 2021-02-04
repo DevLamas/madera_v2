@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                     print(email);
                     print(password);
                     //redirige vers la partie authentification
-                    var ap = Api().getApi();
+                    var ap = Api(email,password).getApi();
                     //ap.http.get();
                     //login(email, password);
                     /*

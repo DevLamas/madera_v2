@@ -49,7 +49,21 @@ packages:
       name: cupertino_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.2"
+  dart_strapi:
+    dependency: "direct main"
+    description:
+      name: dart_strapi
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
+  dio:
+    dependency: transitive
+    description:
+      name: dio
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.10"
   fake_async:
     dependency: transitive
     description:

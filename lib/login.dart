@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:madera_v2/strapi_helper.dart';
 import 'dart:async';
 
 import 'homePage_Commercial.dart';
@@ -15,15 +16,16 @@ class _LoginPageState extends State<LoginPage> {
   String email = '';
   String password = '';
 /*
-  Partie connexion, il va rechercher sur Strapi si il y a dans la collection utilisateur un Utilisateur en fonction de l'email et du mot de passe
-  Si il y : Cela génerera une session entrant le nom, le prénom et le statut de l'tutilisateur
+  //Partie connexion, il va rechercher sur Strapi si il y a dans la collection utilisateur un Utilisateur en fonction de l'email et du mot de passe
+  //Si il y : Cela génerera une session entrant le nom, le prénom et le statut de l'tutilisateur
   Future login(email, password) async{
 
-      var data  = await http.get("http://localhost:1337/utilisateurs/");
-      var jsonData = json.decode(data.body);
-      if (jsonData != null){
 
-      }
+      const { data } = await axios.post('http://telougat.space:1337/auth/local', {
+        identifier: email,
+        password: password,
+      });
+
           //headers:<String,String>{'Context-Type':'application/json;charset=UTF-8'},body:<String,String>
           //{'name':utilisateur.firstName,'email':utilisateur.email,'password':utilisateur.password});
     //Navigator.push(context, new MaterialPageRoute(builder: (context)=>Home(1,0)));
@@ -83,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20.0),
 
               //Input Mot de passe (Mis non visible immédiat
-              TextFormField( 
+              TextFormField(
                 obscureText: true,
                 onChanged: (val) {
                   setState(() => password = val);
@@ -106,11 +108,14 @@ class _LoginPageState extends State<LoginPage> {
                     print(email);
                     print(password);
                     //redirige vers la partie authentification
+                    var ap = Api().getApi();
+                    //ap.http.get();
                     //login(email, password);
+                    /*
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomePageCommercial()),
-                    );
+                        MaterialPageRoute(builder: (context) => ),
+                    );*/
 
                   }
               ),
